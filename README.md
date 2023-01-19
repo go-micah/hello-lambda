@@ -12,8 +12,8 @@ A simple hello world function, written in Go and running on Lambda
 ```bash
 go mod init github.com/go-micah/hello-lambda
 go mod tidy
-GOOS=linux GOARCH=amd64 go build -o ./bin/bootstrap main.go
-zip ./bin/lambda-handler.zip ./bin/bootstrap
+GOOS=linux GOARCH=amd64 go build -o .bin/hello main.go
+(cd bin && zip -FS hello.zip hello)
 ```
 
 ## Notes
@@ -22,7 +22,7 @@ zip ./bin/lambda-handler.zip ./bin/bootstrap
 
 >When you configure a function in Go, the value of the handler setting is the executable file name. For example, using Handler would call the function in the package main of the Handler executable file.
 
-In my case, I used `bootstrap` as the executable, so I had to set this as the handler in the Lambda config.
+In my case, I used `hello` as the executable, so I had to set this as the handler in the Lambda config.
 
 Invoking from the AWS CLI
 

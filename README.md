@@ -24,3 +24,8 @@ zip ./bin/lambda-handler.zip ./bin/bootstrap
 
 In my case, I used `bootstrap` as the executable, so I had to set this as the handler in the Lambda config.
 
+Invoking from the AWS CLI
+
+    aws lambda invoke --function-name helloLambda --region us-east-1 /dev/stdout
+
+

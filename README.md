@@ -9,7 +9,7 @@ A simple hello world function, written in Go and running on Lambda
 
 ## Relevant commands
 
-```
+```bash
 go mod init github.com/go-micah/hello-lambda
 go mod tidy
 GOOS=linux GOARCH=amd64 go build -o ./bin/bootstrap main.go
@@ -26,6 +26,6 @@ In my case, I used `bootstrap` as the executable, so I had to set this as the ha
 
 Invoking from the AWS CLI
 
-    aws lambda invoke --function-name helloLambda --region us-east-1 /dev/stdout
-
-
+```bash
+aws lambda invoke --function-name helloLambda --region us-east-1 /dev/stdout
+```

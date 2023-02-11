@@ -1,3 +1,3 @@
 lambda: 	
-	GOOS=linux GOARCH=amd64 go build -o ./bin/hello main.go
-	(cd bin && zip -FS hello.zip hello)
+	GOARCH=arm64 GOOS=linux go build -tags lambda.norpc -o ./bin/bootstrap
+	(cd bin && zip -FS bootstrap.zip bootstrap)
